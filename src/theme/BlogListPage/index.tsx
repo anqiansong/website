@@ -114,6 +114,8 @@ function BlogListPage(props) {
     )
   }
 
+  // @ts-ignore
+  // @ts-ignore
   return (
     <Layout title={title} description={description} wrapperClassName='blog-list__page'>
       <Head>

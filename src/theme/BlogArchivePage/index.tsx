@@ -62,6 +62,7 @@ function listPostsByYears(blogPosts: ArchiveBlogPost[]): YearProp[] {
 }
 
 export default function BlogArchive({ archive }: Props) {
+  // @ts-ignore
   const years = listPostsByYears(archive.blogPosts);
   return (
     <Layout>

@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react'
-import clsx from 'clsx'
-import { MDXProvider } from '@mdx-js/react'
+import React from 'react'
+import {MDXProvider} from '@mdx-js/react'
 
 import Head from '@docusaurus/Head'
 import Link from '@docusaurus/Link'
@@ -8,18 +7,16 @@ import MDXComponents from '@theme/MDXComponents'
 import useBaseUrl from '@docusaurus/useBaseUrl'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 
-import { useColorMode } from '@docusaurus/theme-common'
+import {useColorMode} from '@docusaurus/theme-common'
 
 import styles from './styles.module.css'
-import { MarkdownSection, StyledBlogItem } from './style'
+import {MarkdownSection, StyledBlogItem} from './style'
 
 import Eye from '@site/static/icons/eye.svg'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTags, faEye } from '@fortawesome/free-solid-svg-icons'
-import BrowserOnly from '@docusaurus/BrowserOnly'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faEye, faTags} from '@fortawesome/free-solid-svg-icons'
 
 import BlogPostAuthors from '@theme/BlogPostAuthors'
-import Translate from '@docusaurus/Translate'
 import dayjs from 'dayjs'
 
 function BlogPostItem(props) {
@@ -53,7 +50,7 @@ function BlogPostItem(props) {
         <div className='margin-vert--md'>
           <time dateTime={date} className={styles.blogPostDate}>
             {dayjs(date).format('YYYY-MM-DD')}
-            {!isBlogPostPage && readingTime && <> · {Math.ceil(readingTime)} min read</>}
+            {!isBlogPostPage && readingTime && <> · 预计阅读时间 {Math.ceil(readingTime)} 分钟</>}
             {isBlogPostPage && readingTime && <> · 预计阅读时间 {Math.ceil(readingTime)} 分钟</>}
           </time>
           {isBlogPostPage && (
@@ -132,7 +129,6 @@ function BlogPostItem(props) {
     <StyledBlogItem
       isDark={isDark}
       isBlogPostPage={isBlogPostPage}
-      // className={isBlogPostPage ? "margin-top--xl" : ""}
     >
       <Head>
         {image && <meta property='og:image' content={imageUrl} />}
@@ -140,8 +136,6 @@ function BlogPostItem(props) {
         {image && <meta name='twitter:image:alt' content={`Image for ${title}`} />}
       </Head>
 
-      {/* 统计 */}
-      {isBlogPostPage && <Count title={title} />}
       <div className={`row ${!isBlogPostPage ? 'blog-list--item' : ''}`} style={{ margin: '0px' }}>
         <div className={`col ${isBlogPostPage ? `col--12 article__details` : `col--12`}`}>
           {/* 博文部分 */}
@@ -174,29 +168,6 @@ function BlogPostItem(props) {
         </div>
       </div>
     </StyledBlogItem>
-  )
-}
-
-function Count({ title, ...post }) {
-  return (
-    <BrowserOnly fallback={<div></div>}>
-      {() => {
-        const addViewCount = async () => {
-          await fetch('https://blog.kuizuo.cn/posts/increase_view', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ title }),
-          })
-        }
-
-        useEffect(() => {
-          addViewCount()
-        }, [])
-        return <></>
-      }}
-    </BrowserOnly>
   )
 }
 

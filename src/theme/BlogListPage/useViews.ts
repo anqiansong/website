@@ -5,24 +5,7 @@ export default function useViews(items) {
     return content?.frontMatter?.title;
   });
   const [views, setViews] = useState<any>([]);
-  const getViews = async () => {
-    try {
-      const res = await fetch('https://blog.kuizuo.cn/posts/views', {
-        method: 'POST',
-        body: JSON.stringify(titles),
-        // mode: 'no-cors',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      const views = await res.json();
-      setViews(views);
-    } catch (error) {}
-  };
-
   useEffect(() => {
-    getViews();
   }, []);
 
   return views;

@@ -6,6 +6,7 @@ import BackToTopButton from '@theme/BackToTopButton'
 import { ThemeClassNames } from '@docusaurus/theme-common'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import TOC from '@theme/TOC'
+import {config} from '../../config/config'
 
 import BrowserOnly from '@docusaurus/BrowserOnly'
 import 'gitalk/dist/gitalk.css'
@@ -32,11 +33,11 @@ function BlogPostPage(props) {
 
   const labels = tags.length > 0 ? tags.map((t) => t.label) : ['Gitalk', title]
   const options = {
-    clientID: '3f390a6f6e979a76d1a1',
-    clientSecret: 'e2cd29b8055fcc2265b2292387236c36857e21fc',
-    repo: 'blog',
-    owner: 'kuizuo',
-    admin: ['kuizuo'],
+    clientID: config.gitTalk.clientID,
+    clientSecret: config.gitTalk.clientSecret,
+    repo: config.gitTalk.repo,
+    owner: config.gitTalk.owner,
+    admin: config.gitTalk.admin,
     id: title,
     title: title,
     labels: labels,

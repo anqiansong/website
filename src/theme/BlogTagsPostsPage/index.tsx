@@ -2,8 +2,7 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import BlogPostItem from '@theme/BlogPostItem';
 import Link from '@docusaurus/Link';
-import BlogSidebar from '@theme/BlogSidebar';
-import Translate, { translate } from '@docusaurus/Translate';
+import Translate, {translate} from '@docusaurus/Translate';
 
 import useViews from '../BlogListPage/useViews';
 

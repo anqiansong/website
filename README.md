@@ -1,19 +1,17 @@
 # 个人博客
 
-![blog](https://img.kuizuo.cn/20220125193719.png)
+![blog](static/readme/readme.png)
 
-访问地址 [愧怍的小站](https://kuizuo.cn) 
+访问地址 [Keson 的博客](https://keson.cn) 
 
-本博客基于 [Docusaurus v2](https://v2.docusaurus.io/)  静态网站生成器实现，借鉴 [峰华前端工程师- 让你学会前端开发 (zxuqian.cn)](https://zxuqian.cn/) 所开源的[代码](https://github.com/zxuqian/zxuqian.cn)上进行二次开发。
-
-具体搭建过程 [第二个博客搭建之Docusaurus - 愧怍的小站 (kuizuo.cn)](https://kuizuo.cn/develop/第二个博客搭建之Docusaurus)
+本博客基于 [Docusaurus v2](https://v2.docusaurus.io/)  静态网站生成器实现，借鉴 [愧怍的小站(kuizuo.cn)](https://kuizuo.cn/) 所开源的 [代码](https://github.com/kuizuo/blog) 上进行二次开发。
 
 ## 使用方法
 
 首先克隆仓库代码：
 
 ```sh
-git clone https://github.com/kuizuo/blog.git
+git clone https://github.com/anqiansong/website.git
 ```
 
 安装依赖：

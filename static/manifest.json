@@ -1,17 +1,11 @@
 {
-  "name": "愧怍的小站",
-  "short_name": "愧怍的小站",
+  "name": "Keson 的博客",
+  "short_name": "Keson 的博客",
   "theme_color": "#2196f3",
   "background_color": "#424242",
   "display": "standalone",
   "scope": "./",
   "start_url": "./index.html",
-  "related_applications": [
-    {
-      "platform": "webapp",
-      "url": "https://kuizuo.cn/manifest.json"
-    }
-  ],
   "icons": [
     {
       "src": "img/icons/icon-128.png",
