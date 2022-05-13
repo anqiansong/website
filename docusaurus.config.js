@@ -40,9 +40,9 @@ const config = {
           position: 'right',
         },
         {
-          label: '博客',
+          label: '标签',
           position: 'right',
-          to: '/blog',
+          to: '/tags',
         },
       ],
     },
@@ -176,30 +176,6 @@ const config = {
         ],
       },
     ],
-  ],
-  stylesheets: [
-    // {
-    //   rel: "preconnect",
-    //   href: "https://fonts.gstatic.com",
-    //   type: "text/css",
-    // },
-    /* {
-      href: "/katex/katex.min.css",
-      type: "text/css",
-      integrity:
-        "sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X",
-      crossorigin: "anonymous",
-    }, */
-    // {
-    //   href: "https://fonts.font.im/css?family=Raleway:500,700&display=swap",
-    //   type: "text/css",
-    //   rel: "stylesheet",
-    // },
-    // {
-    //   href: "https://fonts.googleapis.com/css2?family=Fira+Code&display=swap",
-    //   type: "text/css",
-    //   rel: "stylesheet",
-    // },
   ],
   i18n: {
     defaultLocale: 'zh',
