@@ -1,0 +1,110 @@
+---
+hide_table_of_contents: true
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import ThemedImage from '@theme/ThemedImage';
+
+<h1 style={{ textAlign: 'center' }}>关于我</h1>
+
+👨‍💻 一位代码爱好者，自称码农
+
+🌱 不断在学习中，希望能在有限的时间内，学到无限的可能。
+
+🗒️ 记录所学知识，领略编程之美
+
+<p></p>
+
+### 📚 技术栈
+
+export const CheckBox = ({ children, lang, color }) => (
+  <div className={`checkbox ${lang}`}>
+    <input
+      type='radio'
+      defaultChecked='true'
+      style={{
+        borderColor: color,
+        border: `2px solid ${color}`,
+      }}
+    />
+    <p>{children}</p>
+  </div>
+);
+
+<CheckBox color='#F5DE19' lang='js'>
+  JavaScript
+</CheckBox>
+
+<CheckBox color='#007ACC' lang='ts'>
+  TypeScript
+</CheckBox>
+
+<CheckBox color='#FFDD6D' lang='python'>
+  Python
+</CheckBox>{' '}
+
+<CheckBox color='#6CA35E' lang='node'>
+  NodeJS
+</CheckBox>
+
+<CheckBox color='#41B883' lang='vue'>
+  Vue
+</CheckBox>
+
+<CheckBox color='#61DAFB' lang='react'>
+  React
+</CheckBox>
+
+<CheckBox color='red' lang='e'>
+  HTTP协议
+</CheckBox>
+
+<p></p>
+
+### 🔭 正在学习
+
+<CheckBox color='#6AB344'>Android</CheckBox>
+
+<CheckBox color='#69D7E4'>Go</CheckBox>
+
+<p></p>
+
+### 💬 联系我
+
+📢 RSS [订阅本站](https://feedly.com/i/subscription/feed/https://kuizuo.cn/rss.xml)
+
+🐧 QQ：[911993023](http://wpa.qq.com/msgrd?v=3&uin=911993023&site=qq&menu=yes)
+
+📮 邮箱: [kuizuo12@163.com](mailto:kuizuo12@163.com)
+
+### 👨‍💻 GitHub
+
+<div style={{ margin: 'auto' }}>
+  <a href='https://github-readme-stats.vercel.app/api/top-langs?username=kuizuo&show_icons=true&locale=cn&layout=compact' target='_blank' rel='noreferer noopener'>
+    <ThemedImage
+      alt='kuizuo'
+      sources={{
+        light: useBaseUrl('https://github-readme-stats.vercel.app/api/top-langs?username=kuizuo&show_icons=true&locale=cn&layout=compact'),
+        dark: useBaseUrl('https://github-readme-stats.vercel.app/api/top-langs?username=kuizuo&theme=react&show_icons=true&locale=cn&layout=compact'),
+      }}
+    />
+  </a>
+  <a href='https://github-readme-stats.vercel.app/api?username=kuizuo&show_icons=true&locale=cn&layout=compact' target='_blank' rel='noreferer noopener'>
+    <ThemedImage
+      alt='kuizuo'
+      sources={{
+        light: useBaseUrl('https://github-readme-stats.vercel.app/api?username=kuizuo&show_icons=true&locale=cn&layout=compact'),
+        dark: useBaseUrl('https://github-readme-stats.vercel.app/api?username=kuizuo&theme=react&show_icons=true&locale=cn&layout=compact'),
+      }}
+    />
+  </a>
+  <a href='https://activity-graph.herokuapp.com/graph?username=kuizuo&bg_color=white&color=23affc&line=23affc' target='_blank' rel='noreferer noopener'>
+    <ThemedImage
+      alt='kuizuo'
+      sources={{
+        light: useBaseUrl('https://activity-graph.herokuapp.com/graph?username=kuizuo&bg_color=white&color=23affc&line=23affc'),
+        dark: useBaseUrl('https://activity-graph.herokuapp.com/graph?username=kuizuo&bg_color=white&color=119cc5&line=119cc5'),
+      }}
+    />
+  </a>
+</div>
