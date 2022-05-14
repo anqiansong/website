@@ -63,7 +63,7 @@ const config = {
             },
             {
               label: '关于我',
-              to: '/profile',
+              to: '/about',
             },
             {
               label: 'GitHub',
