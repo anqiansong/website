@@ -3,8 +3,8 @@ import Layout from '@theme/Layout';
 import BlogPostItem from '@theme/BlogPostItem';
 import Link from '@docusaurus/Link';
 import Translate, {translate} from '@docusaurus/Translate';
+import useBaseUrl from "@docusaurus/core/lib/client/exports/useBaseUrl";
 
-import useViews from '../BlogListPage/useViews';
 
 function pluralize(count, word) {
   return count > 1 ? `${word}s` : word;
@@ -13,8 +13,6 @@ function pluralize(count, word) {
 function BlogTagsPostPage(props) {
   const { metadata, items, sidebar } = props;
   const { allTagsPath, name: tagName, count } = metadata;
-
-  const views = useViews(items);
 
   const i18nTitle = translate({
     id: 'blogtagpage.title',
@@ -38,9 +36,6 @@ function BlogTagsPostPage(props) {
     <Layout title={`${i18nTitleAlt} ${tagName} ${i18nTitle}`} description={`${i18nDescription} - "${tagName}"`} wrapperClassName='blog-wrapper'>
       <div className='container margin-vert--lg'>
         <div className='row blog-tags__page'>
-          {/* <div className="col col--2">
-            <BlogSidebar sidebar={sidebar} />
-          </div> */}
           <main className='col col--12'>
             <h1>
               {tagName}： {count}{' '}
@@ -60,7 +55,7 @@ function BlogTagsPostPage(props) {
                   frontMatter={BlogPostContent.frontMatter}
                   metadata={BlogPostContent.metadata}
                   truncated
-                  views={views.find((v) => v.title == BlogPostContent.frontMatter.title)?.views}
+                  assets={{authorsImageUrls:[useBaseUrl("@site/static/img/logo.webp")]}}
                 >
                   <BlogPostContent />
                 </BlogPostItem>

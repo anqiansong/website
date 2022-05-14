@@ -1,27 +1,28 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import Layout from '@theme/Layout'
 import BlogPostItem from '@theme/BlogPostItem'
 import BlogListPaginator from '@theme/BlogListPaginator'
-import useViews from './useViews'
 import styles from './styles.module.css'
 import Fade from 'react-reveal/Fade'
 import Translate from '@docusaurus/Translate'
 import Head from '@docusaurus/Head'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTags, faHistory } from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faTags} from '@fortawesome/free-solid-svg-icons'
 import ListFilter from './img/list.svg'
 import CardFilter from './img/card.svg'
 
 import Link from '@docusaurus/Link'
-import { useViewType } from './useViewType'
-
+import {useViewType} from './useViewType'
+import siteConfig from '@generated/docusaurus.config';
 import Hero from '@site/src/components/Hero'
+import useBaseUrl from "@docusaurus/core/lib/client/exports/useBaseUrl";
+
+const { themeConfig } = siteConfig;
 
 function BlogListPage(props) {
   const { metadata, items, tags, sidebar } = props
-
   const {
     siteConfig: { title: siteTitle },
   } = useDocusaurusContext()
@@ -31,10 +32,10 @@ function BlogListPage(props) {
 
   let title = siteTitle + ''
   let suffix = ''
-  let description = `html, css, javascript, react, vue, node, typescript，前端开发，后端开发，技术分享，开源`
+  // @ts-ignore
+  let description = themeConfig.metadata.content
 
   const isBlogPage = metadata.permalink === '/'
-  const views = useViews(items)
   const { viewType, toggleViewType } = useViewType()
 
   const isCardView = viewType === 'card'
@@ -97,18 +98,6 @@ function BlogListPage(props) {
               </div>
             </div>
           </div>
-          {/* <div className={`bloghome__posts-card ${styles['info-wrapper']}`}>
-            <div className={`row ${styles.card}`}>
-              <div className={styles['personal-info-wrapper']}>
-                <FontAwesomeIcon icon={faHistory} color='#c4d3e0' />
-                <Link className={`post__tags margin-horiz--sm`} href={'./archive'}>
-                  最新文章
-                </Link>
-                <div className='margin-bottom--md'></div>
-                <BlogSidebar sidebar={sidebar} />
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     )
@@ -167,7 +156,7 @@ function BlogListPage(props) {
                             frontMatter={BlogPostContent.frontMatter}
                             metadata={BlogPostContent.metadata}
                             truncated={BlogPostContent.metadata.truncated}
-                            views={views.find((v) => v.title == BlogPostContent.frontMatter.title)?.views}
+                            assets={{authorsImageUrls:[useBaseUrl("@site/static/img/logo.webp")]}}
                           >
                             <BlogPostContent />
                           </BlogPostItem>

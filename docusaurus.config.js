@@ -35,6 +35,11 @@ const config = {
       },
       items: [
         {
+          label: '书籍',
+          to: '/project',
+          position: 'right',
+        },
+        {
           label: '归档',
           to: 'archive',
           position: 'right',

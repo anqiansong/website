@@ -12,8 +12,6 @@ import BrowserOnly from '@docusaurus/BrowserOnly'
 import 'gitalk/dist/gitalk.css'
 import GitalkComponent from 'gitalk/dist/gitalk-component'
 
-import useViews from './useViews'
-
 function BlogPostPage(props) {
   const { content: BlogPostContents, sidebar } = props
   const {
@@ -28,8 +26,6 @@ function BlogPostPage(props) {
   const {
     siteConfig: { url: siteUrl },
   } = useDocusaurusContext()
-
-  const views = useViews(props.content)
 
   const labels = tags.length > 0 ? tags.map((t) => t.label) : ['Gitalk', title]
   const options = {
@@ -78,7 +74,7 @@ function BlogPostPage(props) {
         {tags.length > 0 && <meta property='article:tag' content={tags.map((tag) => tag.label).join(',')} />}
       </div>
 
-      <BlogPostItem frontMatter={frontMatter} assets={assets} metadata={metadata} isBlogPostPage views={views}>
+      <BlogPostItem frontMatter={frontMatter} assets={assets} metadata={metadata} isBlogPostPage>
         <BlogPostContents />
       </BlogPostItem>
       {(nextItem || prevItem) && <BlogPostPaginator nextItem={nextItem} prevItem={prevItem} />}

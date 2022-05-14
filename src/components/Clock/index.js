@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 
-// import useFollowers from "./useFollowers";
 import styles from './styles.module.css';
 
 function Clock(props) {
