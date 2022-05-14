@@ -35,7 +35,7 @@ const config = {
       },
       items: [
         {
-          label: '书籍',
+          label: '学习',
           to: '/project',
           position: 'right',
         },
@@ -63,7 +63,7 @@ const config = {
             },
             {
               label: '关于我',
-              to: '/about',
+              to: '/profile',
             },
             {
               label: 'GitHub',
@@ -91,15 +91,6 @@ const config = {
     liveCodeBlock: {
       playgroundPosition: 'top',
     },
-    // googleAnalytics: {
-    //   trackingID: "UA-118572241-1",
-    //   anonymizeIP: true, // Should IPs be anonymized?
-    // },
-    // gtag: {
-    //   trackingID: "G-6PSESJX0BM",
-    //   // Optional fields.
-    //   anonymizeIP: true, // Should IPs be anonymized?
-    // },
   },
   presets: [
     [
@@ -135,16 +126,12 @@ const config = {
           changefreq: 'daily',
           priority: 0.5,
         },
-        // debug: true,
       }),
     ],
   ],
   themes: ['@docusaurus/theme-live-codeblock'],
   plugins: [
     path.resolve(__dirname, './src/plugin/plugin-baidu-analytics'),
-    path.resolve(__dirname, './src/plugin/plugin-baidu-push'),
-    // path.resolve(__dirname, "./src/plugin/plugin-onesignal-push"),
-    // "docusaurus2-dotenv",
     '@docusaurus/plugin-ideal-image',
     path.resolve(__dirname, './src/plugin/plugin-image-zoom'),
     path.resolve(__dirname, './src/plugin/plugin-latest-docs'),

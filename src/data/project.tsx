@@ -6,31 +6,31 @@ export type Tag = {
   color: string
 }
 
-export type TagType = 'favorite' | 'opensource' | 'product' | 'design' | 'javascript' | 'typescript' | 'nodejs'
+export type TagType = 'favorite' | 'opensource' | 'arch' | 'design' | 'golang' | 'java' | 'tools' | 'sre' |'latest'
 
 export type Project = {
   title: string
   description: string
   preview?: any
   website: string
-  source?: string | null
   tags: TagType[]
+  date: string
 }
 
 export const Tags: Record<TagType, Tag> = {
   favorite: {
     label: 'Favorite',
-    description: 'Our favorite Docusaurus sites that you must absolutely check-out!',
+    description: '收藏',
     color: '#e9669e',
   },
   opensource: {
     label: '开源',
-    description: 'Open-Source Docusaurus sites can be useful for inspiration!',
+    description: '开源类资源',
     color: '#39ca30',
   },
-  product: {
-    label: '产品',
-    description: 'Docusaurus sites associated to a commercial product!',
+  arch: {
+    label: '架构',
+    description: '架构',
     color: '#dfd545',
   },
   design: {
@@ -38,77 +38,63 @@ export const Tags: Record<TagType, Tag> = {
     description: 'Beautiful Docusaurus sites, polished and standing out from the initial template!',
     color: '#a44fb7',
   },
-  javascript: {
-    label: 'JavaScript',
-    description: 'JavaScript project',
+  golang: {
+    label: 'Go',
+    description: 'Go 语言相关资源',
     color: '#dfd545',
   },
-  typescript: {
-    label: 'TypeScript',
-    description: 'JavaScript project',
+  java: {
+    label: 'Java',
+    description: 'Java 相关资源',
     color: '#007acc',
   },
-  nodejs: {
-    label: 'NodeJS',
-    description: 'NodeJS project',
+  tools: {
+    label: '工程效率',
+    description: '工程效率相关资源',
     color: '#39ca30',
+  },
+  sre: {
+    label: 'SRE',
+    description: 'SRE 相关资源',
+    color: '#3F8E68',
+  },
+  latest: {
+    label: 'latest',
+    description: 'latest project',
+    color: '#EC0888',
   },
 }
 
 const Projects: Project[] = [
   {
-    title: '愧怍的小站',
-    description: '基于Docusaurus v2 静态网站生成器实现个人博客',
-    preview: require('./showcase/blog.png'),
-    website: 'https://kuizuo.cn',
-    source: 'https://github.com/kuizuo/blog',
-    tags: ['opensource', 'design'],
-  },
-  {
-    title: '资源导航',
-    description: '学习编程中遇到的资源整合网站',
-    preview: require('./showcase/nav.png'),
-    website: 'https://nav.kuizuo.cn',
-    source: 'https://github.com/kuizuo/code-nav',
-    tags: ['opensource', 'javascript'],
-  },
-  // {
-  //   title: 'kz-admin',
-  //   description: '基于Vue + Vben + NestJs + TypeScript + TypeORM + MySql + Redis编写的一款前后端分离的权限管理系统',
-  //   preview: require('./showcase/blog.png'),
-  //   website: 'https://admin.kuizuo.cn',
-  //   source: 'https://github.com/kuizuo/kz-admin',
-  //   tags: ['opensource', 'typescript'],
-  // },
-  {
-    title: 'JS代码混淆与还原',
-    description: '基于Babel的AST操作对JavaScript代码混淆与还原的网站',
-    preview: require('./showcase/js-de-obfuscator.png'),
-    website: 'https://deobfuscator.kuizuo.cn',
-    source: 'https://github.com/kuizuo/js-de-obfuscator',
-    tags: ['opensource', 'typescript', 'nodejs'],
-  },
-  {
-    title: '愧怍在线工具',
-    description: '基于React与MUI组件库编写的在线工具网站',
-    preview: require('./showcase/tools.png'),
-    website: 'http://tools.kuizuo.cn',
-    source: 'https://github.com/kuizuo/online-tools',
-    tags: ['opensource', 'typescript', 'nodejs'],
-  },
-  {
-    title: '题小侠',
-    description: '基于Taro+Vue3+NutUI编写的搜题小程序',
-    preview: require('./showcase/question-man.png'),
-    website: 'https://img.kuizuo.cn/itopic.jpg',
-    source: 'https://github.com/kuizuo/question-man',
-    tags: ['opensource', 'typescript', 'nodejs'],
+    title: '凤凰架构',
+    description: '构建可靠的大型分布式系统',
+    preview: require('./resource/icyfenix.png'),
+    website: 'http://icyfenix.cn/',
+    tags: ['opensource', 'arch'],
+    date: '2022-05-14',
   },
 ]
+
+function isLatest(date) {
+  if (!date) {
+    return false
+  }
+  var d = new Date()
+  var duration = d.getTime() - Date.parse(date)
+  return duration <= 7 * 24 * 3600 * 1000
+}
 
 export const TagList = Object.keys(Tags) as TagType[]
 function sortProject() {
   let result = Projects
+  result.map((project)=>{
+    if (isLatest(project.date)){
+      project.tags.push('latest')
+    }
+  })
+  // Sort by date asc
+  result = sortBy(result, (user) => new Date().getTime()-Date.parse(user.date));
   // Sort by site name
   // result = sortBy(result, (user) => user.title.toLowerCase());
   // Sort by favorite tag, favorites first

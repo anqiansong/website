@@ -5,37 +5,25 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, { useState, useMemo, useEffect } from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
 
 import FavoriteIcon from '@site/src/components/svgIcons/FavoriteIcon';
-import ShowcaseTagSelect, {
-  readSearchTags,
-} from './_components/ShowcaseTagSelect';
-import ShowcaseFilterToggle, {
-  type Operator,
-  readOperator,
-} from './_components/ShowcaseFilterToggle';
+import ShowcaseTagSelect, {readSearchTags,} from './_components/ShowcaseTagSelect';
+import ShowcaseFilterToggle, {Operator, readOperator,} from './_components/ShowcaseFilterToggle';
 import ShowcaseCard from './_components/ShowcaseCard';
-import {
-  sortedProjects,
-  Tags,
-  TagList,
-  type Project,
-  type TagType,
-} from '@site/src/data/project';
+import {Project, sortedProjects, TagList, Tags, TagType,} from '@site/src/data/project';
 import ShowcaseTooltip from './_components/ShowcaseTooltip';
 
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
-import { useHistory, useLocation } from '@docusaurus/router';
+import {useHistory, useLocation} from '@docusaurus/router';
 
 import styles from './styles.module.css';
 
-const TITLE = '项目展示';
-const DESCRIPTION = '以下项目均由本人开发，均可自由使用，部分开源。';
-const GITHUB_URL = 'http://github.com/kuizuo';
+const TITLE = '学习资源';
+const DESCRIPTION = '以下资源来自网络，仅供个人学习';
 
 type ProjectState = {
   scrollTopPosition: number;
@@ -121,13 +109,6 @@ function ShowcaseHeader() {
     <section className="margin-top--lg margin-bottom--lg text--center">
       <h1>{TITLE}</h1>
       <p>{DESCRIPTION}</p>
-      <a
-        className="button button--primary"
-        href={GITHUB_URL}
-        target="_blank"
-        rel="noreferrer">
-        前往 Github 克隆项目
-      </a>
     </section>
   );
 }
@@ -250,7 +231,7 @@ function ShowcaseCards() {
                 'margin-bottom--md',
                 styles.showcaseFavoriteHeader,
               )}>
-              <h2>所有项目</h2>
+              <h2>资源列表</h2>
               <SearchBar />
             </div>
 
@@ -268,7 +249,7 @@ function ShowcaseCards() {
               'margin-bottom--md',
               styles.showcaseFavoriteHeader,
             )}>
-            <h2>所有项目</h2>
+            <h2>资源列表</h2>
             <SearchBar />
           </div>
           <ul className={styles.showcaseList}>
@@ -287,7 +268,7 @@ function Showcase(): JSX.Element {
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className="margin-vert--lg">
         <ShowcaseHeader />
-        {/* <ShowcaseFilters /> */}
+         <ShowcaseFilters />
         <ShowcaseCards />
       </main>
     </Layout>

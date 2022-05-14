@@ -1,8 +1,11 @@
 ---
-title: 站位页
-date: 2022-05-13
+title: Chrome插件开发
+date: 2020-09-28
 authors: keson
-tags: [placeholder]
+tags: [chrome, 插件, 开发]
 ---
-![placeholder](../resource/readme.png)
-TODO
+![placeholer](../resource/readme.png)
+
+<!-- truncate -->
+
+balabala...

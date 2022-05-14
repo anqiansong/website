@@ -10,8 +10,7 @@ module.exports = function (context, options) {
             var _hmt = _hmt || [];
             (function() {
               var hm = document.createElement("script");
-              hm.src = "https://hm.baidu.com/hm.js?c9a3849aa75f9c4a4e65f846cd1a5155";
-              hm.defer = true;
+              hm.src = "https://hm.baidu.com/hm.js?9abfad4f940c0c6d39f35eba19f044b6";
               var s = document.getElementsByTagName("script")[0]; 
               s.parentNode.insertBefore(hm, s);
             })();
