@@ -2,7 +2,7 @@ import React from 'react'
 
 import { useTrail, animated } from 'react-spring'
 
-import HeroMain from './img/hero_main.svg'
+import HeroMain from './img/hero_cover1.svg'
 
 import GithubIcon from '@site/static/icons/github.svg'
 import ZhiICon from '@site/static/icons/zhihu.svg'
