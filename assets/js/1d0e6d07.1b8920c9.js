@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkkeson_cn=self.webpackChunkkeson_cn||[]).push([[7379],{1490:function(e){e.exports=JSON.parse('{"permalink":"/tags/module","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
