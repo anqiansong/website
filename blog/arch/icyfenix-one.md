@@ -4,6 +4,7 @@ date: 2022-05-17
 authors: keson
 tags: [架构]
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ![cover](../resource/202205/icyfenix-one.svg)
 
@@ -53,7 +54,7 @@ SOA中的一项服务应有以下四个特性：
 ### [信息烟囱式架构](https://en.wikipedia.org/wiki/Information_silo)
 指的是一种不能与其他相关信息系统之间进行互操作或者说协调工作的信息系统。
 
-<center><img src={require('../resource/202205/information_silo.png').default} alt="微内核架构示意"/></center>
+<center><img src={useBaseUrl('../resource/202205/information_silo.png')} alt="微内核架构示意"/></center>
 <center>信息烟囱式架构</center>
 <center>图片来自 <a href="https://en.wikipedia.org/wiki/Information_silo">维基百科</a></center>
 
