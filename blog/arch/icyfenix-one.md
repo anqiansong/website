@@ -54,7 +54,7 @@ SOA中的一项服务应有以下四个特性：
 ### [信息烟囱式架构](https://en.wikipedia.org/wiki/Information_silo)
 指的是一种不能与其他相关信息系统之间进行互操作或者说协调工作的信息系统。
 
-<center><img src={useBaseUrl('../resource/202205/information_silo.png')} alt="微内核架构示意"/></center>
+![信息烟囱式架构](../resource/202205/information_silo.png)
 <center>信息烟囱式架构</center>
 <center>图片来自 <a href="https://en.wikipedia.org/wiki/Information_silo">维基百科</a></center>
 
@@ -64,7 +64,7 @@ SOA中的一项服务应有以下四个特性：
 各子系统使用到的公共服务、数据、资源集中到一块，成为一个被所有业务系统共同依赖的核心（Kernel，也称为 Core System），具体的业务系统以
 插件模块（Plug-in Modules）的形式存在，这样也可提供可扩展的、灵活的、天然隔离的功能特性，即微内核架构，如图所示。
 
-<center><img src={require('../resource/202205/coresystem.png').default} alt="微内核架构示意"/></center>
+![微内核架构示意](../resource/202205/coresystem.png)
 <center>微内核架构示意</center>
 <center>图片引自O'Reilly 的开放文档《 <a href="https://www.oreilly.com/content/software-architecture-patterns/">
 Software Architecture Patterns</a>》</center>
@@ -136,7 +136,7 @@ Microservices: a definition of this new architectural term</a>》
 进行更改，需要重新构建和部署整个单体。随着时间的推移，通常很难保持良好的模块化结构，这使得保持应该只影响该模块中的一个模块的更改变得更加困难。
 扩展需要扩展整个应用程序，而不是需要更多资源的部分。
 
-<center><img src={require('../resource/202205/sketch.png').default} alt="单体和微服务"/></center>
+![单体和微服务](../resource/202205/sketch.png)
 <center>单体和微服务</center>
 <center>图片引自《 <a href="https://martinfowler.com/articles/microservices.html">
 Microservices: a definition of this new architectural term</a>》</center>
@@ -145,7 +145,7 @@ Microservices: a definition of this new architectural term</a>》</center>
 单体应用程序更喜欢使用单个逻辑数据库来存储持久数据，微服务更喜欢让每个服务管理自己的数据库，可以是相同数据库技术的不同实例，也可以是完全不同的
 数据库系统——这种方法称为 Polyglot Persistence。
 
-<center><img src={require('../resource/202205/decentralised-data.png').default} alt="单体和微服务"/></center>
+![单体和微服务](../resource/202205/decentralised-data.png)
 <center>单体和微服务</center>
 <center>图片引自《 <a href="https://martinfowler.com/articles/microservices.html">
 Microservices: a definition of this new architectural term</a>》</center>
@@ -156,7 +156,7 @@ Microservices: a definition of this new architectural term</a>》</center>
 API 便是此方法的范例。
 :::
 
-<center><img src={require('../resource/202205/cloud-native-foundational-pillars.png').default} alt="云原生基础架构"/></center>
+![云原生基础架构](../resource/202205/cloud-native-foundational-pillars.png)
 <center>云原生基础架构</center>
 <center>图片引自《 <a href="https://docs.microsoft.com/zh-cn/dotnet/architecture/cloud-native/definition">
 Microsoft Build: 什么是云原生？》</a></center>
