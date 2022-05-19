@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkkeson_cn=self.webpackChunkkeson_cn||[]).push([[7530],{6711:function(s){s.exports=JSON.parse('{"allTagsPath":"/tags","name":"\u67b6\u6784","count":1,"permalink":"/tags/\u67b6\u6784"}')}}]);
