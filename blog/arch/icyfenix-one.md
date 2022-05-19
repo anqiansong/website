@@ -74,7 +74,7 @@ Software Architecture Patterns</a>》</center>
 子系统从管道里获取自己感兴趣、能够处理的事件消息，也可以为事件新增或者修改其中的附加信息，甚至可以自己发布一些新的事件到管道队列中去，如此，每
 一个消息的处理者都是独立的，高度解耦的，但又能与其他处理者（如果存在该消息处理者的话）通过事件管道进行互动，如图所示:
 
-<center><img src={require('../resource/202205/eventbus.png').default} alt="事件驱动架构示意"/></center>
+![事件驱动架构示意](../resource/202205/eventbus.png)
 <center>事件驱动架构示意</center>
 <center>图片引自O'Reilly 的开放文档《 <a href="https://www.oreilly.com/content/software-architecture-patterns/">
 Software Architecture Patterns</a>》</center>
