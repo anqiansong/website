@@ -67,6 +67,14 @@ export const Tags: Record<TagType, Tag> = {
 
 const Projects: Project[] = [
   {
+    title: 'Microsoft Build',
+    description: '应用程序架构基础',
+    preview: require('./resource/microsoft-build.png'),
+    website: 'https://docs.microsoft.com/en-us/azure/architecture/guide/',
+    tags: ['opensource', 'arch'],
+    date: '2022-05-20',
+  },
+  {
     title: '凤凰架构',
     description: '构建可靠的大型分布式系统',
     preview: require('./resource/icyfenix.png'),
