@@ -50,7 +50,7 @@ https://github.com/anqiansong/github-compare
 $ go install github.com/anqiansong/github-compare
 ```
 
-## 实例
+## 示例
 ```bash
 $ github-compare zeromicro/go-zero go-kratos/kratos asim/go-micro go-kit/kit
 ```
