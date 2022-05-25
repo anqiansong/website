@@ -5,6 +5,24 @@
     "description": "Keson 的博客 Blog",
     "items": [
         {
+            "id": "/tool/github-compare",
+            "content_html": null,
+            "url": "https://keson.cn/tool/github-compare",
+            "title": "GitHub 仓库对比工具 ———— github-compare",
+            "summary": "preview",
+            "date_modified": "2022-05-25T00:00:00.000Z",
+            "author": {
+                "name": "Keson",
+                "url": "https://github.com/anqiansong"
+            },
+            "tags": [
+                "go",
+                "tool",
+                "github",
+                "cli"
+            ]
+        },
+        {
             "id": "/arch/icyfenix-one",
             "content_html": null,
             "url": "https://keson.cn/arch/icyfenix-one",

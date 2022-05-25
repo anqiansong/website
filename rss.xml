@@ -4,11 +4,22 @@
         <title>Keson</title>
         <link>https://keson.cn/</link>
         <description>Keson 的博客 Blog</description>
-        <lastBuildDate>Tue, 17 May 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 25 May 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh</language>
         <copyright>Copyright © 2022 Keson Built with Docusaurus.&lt;p&gt;&lt;/p&gt;</copyright>
+        <item>
+            <title><![CDATA[GitHub 仓库对比工具 ———— github-compare]]></title>
+            <link>https://keson.cn/tool/github-compare</link>
+            <guid>/tool/github-compare</guid>
+            <pubDate>Wed, 25 May 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[preview]]></description>
+            <category>go</category>
+            <category>tool</category>
+            <category>github</category>
+            <category>cli</category>
+        </item>
         <item>
             <title><![CDATA[凤凰架构学习笔记——演进中的架构]]></title>
             <link>https://keson.cn/arch/icyfenix-one</link>

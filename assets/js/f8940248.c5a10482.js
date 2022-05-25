@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkkeson_cn=self.webpackChunkkeson_cn||[]).push([[2680],{7464:function(s){s.exports=JSON.parse('{"allTagsPath":"/tags","name":"tool","count":1,"permalink":"/tags/tool"}')}}]);
