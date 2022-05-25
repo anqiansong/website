@@ -3,14 +3,10 @@ import BlogLayout from '@theme/BlogLayout'
 import BlogPostItem from '@theme/BlogPostItem'
 import BlogPostPaginator from '@theme/BlogPostPaginator'
 import BackToTopButton from '@theme/BackToTopButton'
-import { ThemeClassNames } from '@docusaurus/theme-common'
+import {ThemeClassNames} from '@docusaurus/theme-common'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import TOC from '@theme/TOC'
-import {config} from '../../config/config'
-
-import BrowserOnly from '@docusaurus/BrowserOnly'
 import 'gitalk/dist/gitalk.css'
-import GitalkComponent from 'gitalk/dist/gitalk-component'
 
 function BlogPostPage(props) {
   const { content: BlogPostContents, sidebar } = props
@@ -29,11 +25,6 @@ function BlogPostPage(props) {
 
   const labels = tags.length > 0 ? tags.map((t) => t.label) : ['Gitalk', title]
   const options = {
-    clientID: config.gitTalk.clientID,
-    clientSecret: config.gitTalk.clientSecret,
-    repo: config.gitTalk.repo,
-    owner: config.gitTalk.owner,
-    admin: config.gitTalk.admin,
     id: title,
     title: title,
     labels: labels,
@@ -79,7 +70,6 @@ function BlogPostPage(props) {
       </BlogPostItem>
       {(nextItem || prevItem) && <BlogPostPaginator nextItem={nextItem} prevItem={prevItem} />}
 
-      <BrowserOnly fallback={<div></div>}>{() => <GitalkComponent options={options} />}</BrowserOnly>
     </BlogLayout>
   )
 }

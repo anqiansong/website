@@ -2,6 +2,10 @@
 const path = require('path')
 const friendLinks = [
   {
+    label: 'github-compare',
+    to: 'https://github.com/anqiansong/github-compare',
+  },
+  {
     label: 'go-zero',
     to: 'https://go-zero.dev/',
   },
@@ -43,6 +47,16 @@ const config = {
           label: '归档',
           to: 'archive',
           position: 'right',
+        },
+        {
+          label: '工具',
+          position: 'right',
+          items: [
+            {
+              label: "github-compare",
+              href: "https://github.com/anqiansong/github-compare"
+            }
+          ]
         },
         {
           label: '标签',
@@ -111,8 +125,8 @@ const config = {
           // remarkPlugins: [require("remark-math")],
           // rehypePlugins: [require("rehype-katex")],
           showReadingTime: true,
-          readingTime: ({ content, frontMatter, defaultReadingTime }) =>
-            defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
+          readingTime: ({content, frontMatter, defaultReadingTime}) =>
+            defaultReadingTime({content, options: {wordsPerMinute: 300}}),
           feedOptions: {
             type: 'all',
             title: 'Keson',
@@ -135,15 +149,6 @@ const config = {
     '@docusaurus/plugin-ideal-image',
     path.resolve(__dirname, './src/plugin/plugin-image-zoom'),
     path.resolve(__dirname, './src/plugin/plugin-latest-docs'),
-    // [
-    //   "@easyops-cn/docusaurus-search-local",
-    //   {
-    //     hashed: true,
-    //     // indexPages: true,
-    //     blogRouteBasePath: "/",
-    //     language: ["en", "zh"],
-    //   },
-    // ],
     [
       '@docusaurus/plugin-pwa',
       {
