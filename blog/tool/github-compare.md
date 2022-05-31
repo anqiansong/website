@@ -47,15 +47,92 @@ https://github.com/anqiansong/github-compare
 ## 安装
 
 ```bash
-$ go install github.com/anqiansong/github-compare
+$ go install github.com/anqiansong/github-compare@latest
 ```
 
 ## 示例
+### TermUI
+
+#### 单仓库
 ```bash
-$ github-compare zeromicro/go-zero go-kratos/kratos asim/go-micro go-kit/kit
+$ github-compare spf13/cobra
 ```
 
-![github-compare-result](../resource/202205/github-compare-preview.png)
+![repo-detail](../resource/202205/repo-detail.png)
+
+#### 多仓库
+
+```bash
+$ github-compare spf13/cobra urfave/cli junegunn/fzf antonmedv/fx
+```
+
+![preview](../resource/202205/compare-preview.png)
+
+### JSON视图
+
+```bash
+$ github-compare spf13/cobra --json                                           
+[
+  {
+    "age": "3191 days",
+    "avgReleasePeriod": "199 days",
+    "contributorCount": "246",
+    "forkCount": "2331(0/d)",
+    "fullName": "spf13/cobra",
+    "homepage": "https://cobra.dev",
+    "issue": "0/893",
+    "language": "Go",
+    "lastPushedAt": "15 hour(s) ago",
+    "latestReleaseAt": "2 month(s) ago",
+    "lastUpdatedAt": "3 minute(s) ago",
+    "latestDayStarCount": "13 ⇈",
+    "latestMonthStarCount": "455",
+    "latestWeekStarCount": "93 ⇊",
+    "license": "Apache License 2.0",
+    "pull": "56/809",
+    "releaseCount": "16",
+    "starCount": "26807(8/d)",
+    "watcherCount": "349",
+    "description": "A Commander for modern Go CLI interactions",
+    ...
+]
+```
+
+### YAML视图
+
+```bash
+$ github-compare spf13/cobra --yaml                                           
+- age: 3191 days
+  avgreleaseperiod: 199 days
+  contributorcount: "246"
+  forkcount: 2331(0/d)
+  fullname: spf13/cobra
+  homepage: https://cobra.dev
+  issue: 0/893
+  language: Go
+  lastpushedat: 15 hour(s) ago
+  latestreleaseat: 2 month(s) ago
+  lastupdatedat: 7 minute(s) ago
+  latestdaystarcount: 13 ⇈
+  latestmonthstarcount: "455"
+  latestweekstarcount: 93 ⇊
+  license: Apache License 2.0
+  pull: 56/809
+  releasecount: "16"
+  starcount: 26807(8/d)
+  watchercount: "349"
+  description: A Commander for modern Go CLI interactions
+  ...
+```
+
+### Export as a csv file
+
+```bash
+$ github-compare spf13/cobra urfave/cli junegunn/fzf antonmedv/fx -f data.csv
+```
+
+![csv](../resource/202205/compare-csv.png)
+
 
 ## 用法
 
@@ -73,6 +150,25 @@ $ github-compare zeromicro/go-zero go-kratos/kratos asim/go-micro go-kit/kit
 #  或者添加到环境变量(推荐)
 $ export GITHUB_ACCESS_TOKEN=${GITHUB_ACCESS_TOKEN}
 $ github-compare zeromicro/go-zero go-kratos/kratos asim/go-micro go-kit/kit
+```
+
+## 指令
+
+```bash
+$ github-compare -h                                                    
+A GitHub repositories statistics command-line tool for the terminal
+
+Usage:
+  github-compare [flags]
+
+Flags:
+  -f, --file string    output to a specified file
+  -h, --help           help for github-compare
+      --json           print with json style
+  -t, --token string   github access token
+      --ui             print with term ui style(default) (default true)
+  -v, --version        version for github-compare
+      --yaml           print with yaml style
 ```
 
 ## 说明
